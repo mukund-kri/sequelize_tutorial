@@ -1,0 +1,5 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Sequelize ORM tutorial'
+
+theme = 'hugo-book'
