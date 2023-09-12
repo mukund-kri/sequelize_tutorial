@@ -1,6 +1,6 @@
 ---
 weight: 5
-title: Querying
+title: Getting Records
 ---
 
 # Getting records

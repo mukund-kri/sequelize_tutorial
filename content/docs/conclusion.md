@@ -1,6 +1,6 @@
 ---
-weight: 1
-title: Introduction
+weight: 100
+title: Conclusion
 ---
 
-# About this tutorial
+# Takeaways from this tutorial
