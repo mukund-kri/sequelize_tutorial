@@ -1,5 +1,5 @@
 ---
-weight: 3
+weight: 13
 title: Connect to db
 ---
 
@@ -48,3 +48,6 @@ The full code is available [here](https://github.com/mukund-kri/sequelize_tutori
 
 Next up we'll create a model and see how to create tables in the database, and how to
 insert data into the tables.
+
+
+{{< pagebottomnav >}}

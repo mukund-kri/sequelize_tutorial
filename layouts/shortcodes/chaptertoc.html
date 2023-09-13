@@ -1,0 +1,8 @@
+<h3>Table of Contents:</h3>
+<table>
+    {{ range .Page.Pages }}
+    <tr>
+        <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+    </tr>
+    {{ end }}
+</table>

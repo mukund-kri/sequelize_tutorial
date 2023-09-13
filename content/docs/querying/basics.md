@@ -1,7 +1,9 @@
 ---
-weight: 1
+weight: 31
 title: Query Basics
 ---
 
 
 # Querying Basics
+
+{{< pagebottomnav >}}

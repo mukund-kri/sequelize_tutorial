@@ -1,5 +1,5 @@
 ---
-weight: 5
+weight: 22
 title: Getting Records
 ---
 
@@ -47,5 +47,4 @@ we can do in standard SQL.
 - The `findAll` method is equivalent to `SELECT * FROM ...`.
 - As with all the API `findAll` method returns a promise which makes the code asynchronous.
 
-
-
+{{< pagebottomnav >}}

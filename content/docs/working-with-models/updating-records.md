@@ -1,5 +1,5 @@
 ---
-weight: 6
+weight: 23
 title: Updating Records
 ---
 
@@ -35,3 +35,5 @@ Executing (default): UPDATE `Questions` SET `answer`=$1,`updatedAt`=$2 WHERE `id
 ```
 
 ### The `update` API
+
+{{< pagebottomnav >}}

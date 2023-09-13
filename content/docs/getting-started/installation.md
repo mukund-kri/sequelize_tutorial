@@ -1,6 +1,6 @@
 ---
-name: Installation
-weight: 2
+weight: 11
+title: Installation
 ---
 
 # Installing Sequelize
@@ -46,3 +46,4 @@ Finally install sequelize itself.
 > npm install sequelize sqlite3
 ```
 
+{{< pagebottomnav >}}

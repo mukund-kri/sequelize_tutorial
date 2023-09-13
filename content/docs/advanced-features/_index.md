@@ -5,3 +5,5 @@ bookFlatSection: true
 ---
 
 # Advanced Features
+
+{{< chaptertoc >}}

@@ -5,3 +5,5 @@ bookFlatSection: true
 ---
 
 # Sequelize CLI
+
+{{< chaptertoc >}}

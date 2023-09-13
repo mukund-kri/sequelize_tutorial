@@ -1,5 +1,5 @@
 ---
-weight: 4
+weight: 14
 title: Model Basics
 ---
 
@@ -103,3 +103,5 @@ The full code is available [here](https://github.com/mukund-kri/sequelize_tutori
 
 Now that we have a model and a table, let's see how to insert, delete and get
 data from the table.
+
+{{< pagebottomnav >}}

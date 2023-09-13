@@ -1,0 +1,9 @@
+<div>
+    {{ if ne .Page.Next nil }}
+    <a href="{{ .Page.Next.Permalink }}">Previous: {{ .Page.Next.Title }}</a>
+    {{ end }}
+
+    {{ if ne .Page.Prev nil }}
+    <a href="{{ .Page.Prev.Permalink }}" style="float: right;">Next: {{ .Page.Prev.Title }}</a>
+    {{ end }}
+</div>
