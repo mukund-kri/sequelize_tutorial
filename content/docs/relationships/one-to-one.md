@@ -5,16 +5,18 @@ title: One to One
 
 # One to One relationships
 
+{{<fullcode "https://github.com/mukund-kri/sequelize_tutorial_code/blob/relationships/07_one_to_one.js">}}
+
 ## Relationship API
 
-All 3 types of in Sequelize are done with the following 4 API calls on the model:
+All 3 types of relationships in Sequelize are defined with the following 4 API calls on the model:
 
 - `hasOne`
 - `belongsTo`
 - `hasMany`
 - `belongsToMany`
 
-The API calls are all very similar, so we will only cover `hasOne` and `belongsTo` in this section. The other two will be covered in the next section.
+The API calls are all very similar, but, we need only `hasOne` and `belongsTo` for one to one relationships. We'll look at the other 2 in the next sections.
 
 ## One to One
 

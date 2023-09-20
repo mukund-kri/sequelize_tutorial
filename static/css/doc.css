@@ -1,0 +1,15 @@
+.code-icon {
+    width: 150px;
+    float: left;
+}
+
+.code-ref {
+    padding: 10px 0 0 0;
+    border: 1px solid #ccc;
+}
+
+.code-ref::after {
+    content: "";
+    display: table;
+    clear: both;
+}
