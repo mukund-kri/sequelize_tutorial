@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://mukund-kri.github.io/sequelize_tutorial'
 languageCode = 'en-us'
 title = 'Sequelize ORM tutorial'
 
