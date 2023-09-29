@@ -34,7 +34,7 @@ The equivalent SQL would be:
 SELECT * FROM Questions WHERE id = 1;
 ```
 
-** Notes: **
+**Notes:**
 - The `query object` is passed as an argument to the `findAll` method.
 - The `where` property is an also an object.
 - The `where` property is used to specify the `where clause` of the SQL query.

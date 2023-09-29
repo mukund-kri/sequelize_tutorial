@@ -77,8 +77,85 @@ The call to `user.save()` triggers 2 insert statements. One for the user and one
 
 ### Querying
 
-```js
+Now that we have created some instances, let's look at how to query them, especially 
+how to include the associated instance. By default, sequelize will not include the 
+associated model instance. You have to use the automatic `get` method. Let's look at
+some code so that this becomes clear.
 
+{{<highlight javascript "linenos=true">}}
+    // Get a user
+    let user = await User.findOne({
+        where: {
+            name: 'John Doe'
+        }
+    });
+    console.log('User profile:', JSON.stringify(user, null, 4));
+    // Note the profile is not retrieved by default. We need to explicitly ask for it.
+
+    // Get profile
+    let profile = await user.getProfile();
+    console.log('User profile:', JSON.stringify(profile, null, 4));
+{{</highlight>}}
+
+Running this code outputs something like this:
+
+{{<highlight javascript "linenos=true">}}
+User profile: {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe#example.com",
+    "createdAt": "2023-09-18T07:56:40.205Z",
+    "updatedAt": "2023-09-18T07:56:40.205Z"
+}
+User profile: {
+    "id": 1,
+    "bio": "I am a new user",
+    "createdAt": "2023-09-18T07:56:40.222Z",
+    "updatedAt": "2023-09-18T07:56:40.232Z",
+    "UserId": 1
+}
+{{</highlight>}}
+
+As you can see there 2 separate API calls here. 
+1. `User.findOne` to get the user. But this does not include the profile.
+2. `user.getProfile` to get the profile. This is an automatic method that sequelize adds to the model instance. 
+
+#### Eager Loading
+
+If you want to get the profile along with the user, in one shot you need to use the 
+`include` property of the query object. For example:
+
+{{<highlight javascript "linenos=true">}}
+    // Get a user
+    let user = await User.findOne({
+        where: {
+            name: 'John Doe'
+        },
+        include: [Profile]
+    });
+    console.log('User + profile:', JSON.stringify(user, null, 4));
+{{</highlight>}}
+
+Running this code outputs like this:
+
+{{<highlight javascript "linenos=true">}}
+User + profile: {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe#example.com",
+    "createdAt": "2023-09-18T07:56:40.205Z",
+    "updatedAt": "2023-09-18T07:56:40.205Z",
+    "Profile": {
+        "id": 1,
+        "bio": "I am a new user",
+        "createdAt": "2023-09-18T07:56:40.222Z",
+        "updatedAt": "2023-09-18T07:56:40.232Z",
+        "UserId": 1
+    }
+}
+{{</highlight>}}
+
+As you can see, the profile is included in the user object returned by the `findOne` call.
 
 
 {{< pagebottomnav >}}
