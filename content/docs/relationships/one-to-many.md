@@ -119,8 +119,5 @@ section, we will look at how to get the `one` from the `many`.
 // Retrieve the options and the associated question
 {{</highlight>}}
 
-## Updating / Deleting data
-
-I leave this as an exercise. Refer the Sequelize documentation for more details.
 
 {{< pagebottomnav >}}
