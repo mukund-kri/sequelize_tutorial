@@ -13,3 +13,8 @@
     display: table;
     clear: both;
 }
+
+.page-bottom-dev {
+    padding: 30px 0 0 0;
+    border-top: 1px solid #ccc;
+}
