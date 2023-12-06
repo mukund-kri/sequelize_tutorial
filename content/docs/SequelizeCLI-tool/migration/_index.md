@@ -15,4 +15,4 @@ This is where **Migrations** come in. Migrations are a way to make schema change
 
 In this section we'll see how to do migrations in Sequelize.
 
-{{< pagebottomnav >}}
+{{< chaptertoc >}} 
