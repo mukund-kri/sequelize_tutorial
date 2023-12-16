@@ -10,9 +10,11 @@ The process of checking the data being written to the database, against a set of
 ## Validation vs. Constraints
 
 Constraints are rules that are defined on the database level. They exactly same as
-the ones in SQL. For example, the `NOT NULL` constraint ensures that a column cannot be null, the `UNIQUE` constraint ensures that a column cannot have duplicate values, etc.
+ SQL constraints. For example, the `NOT NULL` constraint ensures that a column cannot be null, the `UNIQUE` constraint ensures that a column cannot have duplicate values, etc.
 
 Validation on the other hand is done in JavaScript and is done before the data is written to the database. Sequelize provides this functionality.
+
+{{<fullcode "https://github.com/mukund-kri/sequelize_tutorial_code/blob/main/12_validation.js">}}
 
 ## Validation in Sequelize
 
@@ -108,7 +110,7 @@ const User = sequelize.define('user', {
     }
 }, {
     validate: {
-        bothPasswordsMustBeSet() {
+        isConfirmPasswordSame() {
             if ((this.password === undefined) !== (this.confirmPassword === undefined)) {
                 throw new Error('Both password fields must be set.');
             }
@@ -119,7 +121,7 @@ const User = sequelize.define('user', {
 
 **Notes:**
 
-* The `validation` is done by a method called `bothPasswordsMustBeSet()`. 
+* The `validation` is done by a method called `isConfirmPasswordSame()`. 
 * the `this` inside is bound to the model instance, and hence, have access all the fields of the model instance.
 
 

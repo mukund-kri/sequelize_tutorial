@@ -59,6 +59,6 @@ In our case we use sqlite for development and testing. So, we need to change the
 }
 ```
 
-We'll leave the `test` and 000000000`production` databases blank for now.
+We'll leave the `test` and `production` databases blank for now.
 
 {{< pagebottomnav >}}
