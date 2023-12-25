@@ -8,9 +8,8 @@ title: Models and Migration
 ### In this section we will ...
 
 1. Use the Sequelize CLI to create a model and a migration for that model
-2. Run the migration and check the database to see if the table was created
-3. Undo the migration
-4. Rinse and repeat
+2. Modify the generated model to suit our needs
+3. Modify the generated migration to suit our needs
 
 ## Step 1: Create a model and a migration for that model
 
@@ -120,57 +119,8 @@ module.exports = {
 **Notes:**
 1. The field in the migration file mirror the fields in the model file.
 2. Extra fields `id`, `createdAt` and `updatedAt` are added to the migration file. These fields are usually added by Sequelize automatically. But since the table creation duty is delegated to the migration file we need to add them manually.
+3. We see that the migration file has two functions: `up` and `down`. The `up` function is used to apply the migration. The `down` function is used to undo the migration. We'll see how to do that in the next chapter.
 
 Right! we're ready to run the migration, ie. use the migration file to create the table in the database.
-
-## Step 2: Run the migration
-
-The command to run the migration is:
-
-```bash
-> npx sequelize-cli db:migrate
-```
-
-This should create the table in the database. If there were no errors the command should output something like this:
-
-```bash
-Sequelize CLI [Node: 20.6.0, CLI: 6.6.2, ORM: 6.35.1]
-
-Loaded configuration file "config/config.json".
-Using environment "development".
-== 20231207031450-create-question: migrating =======
-== 20231207031450-create-question: migrated (0.021s)
-```
-
-At this point log into sqlite and check if the table was created.
-
-```bash
-> sqlite3 db.development.sqlite
-```
-
-Once logged in use the `.schema` command of sqlite to see the schema of newly created table. It should look like this:
-
-```sql
-CREATE TABLE `Questions`(
-  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
-  `title` VARCHAR(255) NOT NULL,
-  `body` TEXT,
-  `answer` VARCHAR(255) NOT NULL,
-  `createdAt` DATETIME NOT NULL,
-  `updatedAt` DATETIME NOT NULL
-);
-```
-
-**Notes:**
-
-We see that the migration file has two functions: `up` and `down`. 
-
-The `up` function is used to apply the migration. Basically `sequelize-cli` keeps track of all the migration that have been applied (run). When we run the `db:migrate` command `sequelize-cli` checks which migrations have not been applied and calls the `up` function of those migrations.
-
-
-The `down` function is used to undo the migration. We'll see how to do that in the next step.
-## Step 5: Undo the migration
-
-## Step 6: Rinse and repeat
 
 {{< pagebottomnav >}}
